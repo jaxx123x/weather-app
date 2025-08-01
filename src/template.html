@@ -5,23 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <div class="content">
+        <input type="text" id="input" placeholder="Dorohoi, Botosani" />
 
-        <input type="text" id="input" placeholder="Dorohoi, Botosani">
-        <div id="date">
-            Miercuri, 30 August
-        </div>
-
+        <div id="date">Miercuri, 30 August, Dorohoi</div>
 
         <div id="today-weather">
-
             <div class="day-night-weather">
                 <div class="day-weather">☀️ 25°C</div>
                 <div class="night-weather">🌙 15°C</div>
@@ -32,21 +27,75 @@
                 <div class="humidity">💧 50</div>
                 <div class="precipitation">⛈️ 69%</div>
             </div>
+            <div class="buttons">
+                <button id="for-days">Zile</button>
+                <button id="for-hours">Ore</button>
+            </div>
         </div>
 
         <div class="other-days">
             <div class="day" id="day1">
-                <div class="which-day"></div>
-                div.
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
             </div>
-            <div class="day" id="day2"></div>
-            <div class="day" id="day3"></div>
-            <div class="day" id="day4"></div>
-            <div class="day" id="day5"></div>
-            <div class="day" id="day6"></div>
+            <div class="day" id="day2">
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
+            </div>
+            <div class="day" id="day3">
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
+            </div>
+            <div class="day" id="day4">
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
+            </div>
+            <div class="day" id="day5">
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
+            </div>
+            <div class="day" id="day6">
+                <div class="which-day">Maine</div>
+                <div class="dayy">☀️ 25°C</div>
+                <div class="night">🌙 15°C</div>
+                <div class="description">⛈️ Probabil ploaie</div>
+            </div>
         </div>
 
+        <div class="info-per-hours">
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+            <div class="hours">1</div>
+        </div>
+    </div>
 
+    <div class="location-popup" id="location-popup">
+        <div class="popup-content">
+            <p>Permiți accesul la locația ta pentru a-ți arăta vremea?</p>
+            <div class="popup-buttons">
+                <button id="accept-location">Permite</button>
+                <button id="deny-location">Refuză</button>
+            </div>
+        </div>
     </div>
 </body>
 
