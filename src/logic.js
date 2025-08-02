@@ -3,6 +3,7 @@ import { DOM } from "./dom.js";
 
 const days = [];
 
+
 class currentDay {
   constructor(dayTemp, nightTemp, temp, humidity, precipitation, forHours) {
     this.dayTemp = dayTemp;
@@ -26,6 +27,16 @@ class forHoursTemp {
     this.temp = temp;
   }
 }
+
+export const time = function() {
+    const currTime = Date.now();
+    const now = new Date(currTime);
+    const hour = now.getHours();
+    return hour;
+};
+
+
+
 
 export async function getLocation() {
   function getCurrentPositionPromise() {
@@ -56,16 +67,17 @@ export async function getLocation() {
 }
 
 
-export async function getWeather() {
+export async function getWeather(city) {
   const location = await fetch(
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Vaculesti,Botosani,Romania?key=G6M7JFRQTGQL4S2BAE4XY46J5",
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=G6M7JFRQTGQL4S2BAE4XY46J5`,
   );
   const json = await location.json();
   return json;
 }
 
 
-getWeather().then((result) => {
+export async function locationToJson(locationName) {
+getWeather(locationName).then((result) => {
   console.log(result);
   for (let i = 0; i < 7; i++) {
     const dayTemp = ((result.days[i].tempmax - 32) * 5) / 9;
@@ -94,3 +106,5 @@ getWeather().then((result) => {
   }
   console.log(days);
 });
+
+}

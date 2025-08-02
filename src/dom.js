@@ -1,4 +1,7 @@
+//dom.js
 import { getLocation } from "./logic";
+import { getWeather } from "./logic";
+import { locationToJson } from "./logic";
 
 export const DOM = (function () {
   //input and date
@@ -50,19 +53,3 @@ export const DOM = (function () {
 })();
 
 
-(function () {
-    DOM.accept.addEventListener("click", () => {
-        getLocation().then(result => {
-            console.log(result)
-            DOM.popup.style.position = "";
-            DOM.popup.style.display = "none";
-        })
-    })
-
-    DOM.refuse.addEventListener("click", () => {
-        
-            DOM.popup.style.position = "";
-            DOM.popup.style.display = "none";
-        
-    })
-})();
