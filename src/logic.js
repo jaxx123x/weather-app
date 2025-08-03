@@ -62,7 +62,7 @@ export async function getLocation() {
     const longitude = position.coords.longitude;
 
     const data = await fetch(
-      `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=06d15b59415252f20073e20a617908d5`,
+      `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=06d15b59415252f20073e20a617908d5`,
     );
     const json = await data.json();
     const location = `${json[0].name}, ${json[0].country}`;

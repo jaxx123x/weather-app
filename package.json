@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "@eslint/json": "^0.13.1",
     "css-loader": "^7.1.2",
     "eslint": "^9.32.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
@@ -30,4 +32,7 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   }
+  
+ 
 }
+
