@@ -1,21 +1,28 @@
 //logic.js
 import { DOM } from "./dom.js";
 
-const days = [];
+export const dayManager = {
+    days: []
+}
 
 
 class currentDay {
-  constructor(dayTemp, nightTemp, temp, humidity, precipitation, forHours) {
+  constructor(dayTemp, nightTemp, temp, humidity, precipitation, forHours, location, hour, icon, id, datetime) {
     this.dayTemp = dayTemp;
     this.nightTemp = nightTemp;
     this.temp = temp;
     this.humidity = humidity;
     this.precipitation = precipitation;
     this.forHours = forHours;
+    this.location = location;
+    this.hour = hour;
+    this.icon = icon;
+    this.id = id;
+    this.datetime = datetime;
   }
 
   pushIn() {
-    days.push(this);
+    dayManager.days.push(this);
   }
 }
 
@@ -77,7 +84,7 @@ export async function getWeather(city) {
 
 
 export async function locationToJson(locationName) {
-getWeather(locationName).then((result) => {
+const result = await getWeather(locationName);
   console.log(result);
   for (let i = 0; i < 7; i++) {
     const dayTemp = ((result.days[i].tempmax - 32) * 5) / 9;
@@ -86,6 +93,11 @@ getWeather(locationName).then((result) => {
     const humidity = result.days[i].humidity;
     const precipitation = result.days[i].precipprob;
     const forHours = [];
+    const loc = result.address;
+    const currentTime = result.currentConditions.datetime;
+    const icon = result.currentConditions.icon;
+    const id = i;
+    const datetime = result.days[i].datetime;
     for (let j = 0; j < 24; j++) {
       const hour = result.days[i].hours[j].datetime;
       const humidity = result.days[i].hours[j].humidity;
@@ -101,10 +113,18 @@ getWeather(locationName).then((result) => {
       humidity,
       precipitation,
       forHours,
+      loc,
+      currentTime,
+      icon,
+      id,
+      datetime
     );
     thisDay.pushIn();
   }
-  console.log(days);
-});
+  
+};
 
+
+export async function searchBar() {
+  
 }

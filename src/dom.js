@@ -7,6 +7,7 @@ export const DOM = (function () {
   //input and date
   const userInput = document.querySelector("#input");
   const date = document.querySelector("#date");
+  const content = document.querySelector(".content");
 
   //current day informations
   const currentDayWeather = document.querySelector(".day-weather");
@@ -31,6 +32,16 @@ export const DOM = (function () {
   const refuse = document.querySelector("#deny-location");
   const popup = document.querySelector("#location-popup");
 
+  //
+  const infosPerHour = document.querySelector(".info-per-hours");
+
+  //right-left buttons
+  const leftButton = document.querySelector("#left-scroll");
+  const rightButton =  document.querySelector("#right-scroll");
+
+  //
+  const submit = document.querySelector("#submit");
+
   return {
     userInput,
     date,
@@ -48,7 +59,12 @@ export const DOM = (function () {
     description,
     accept,
     refuse,
-    popup
+    popup,
+    infosPerHour,
+    leftButton,
+    rightButton,
+    content,
+    submit
   };
 })();
 

@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -13,6 +14,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/imgs", to: "imgs" }
+      ]
+    }),
   ],
   module: {
     rules: [
@@ -22,4 +28,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080,
+    // alte setări
+  }
 };
